@@ -1,0 +1,50 @@
+#include <stdio.h>
+
+
+long long factorial(int n);
+
+long  long nPr(int n, int r);
+
+int main(void)
+{
+	int n ,r;
+	printf("enter the value of n and r : ");
+	scanf("%d %d",&n,&r);
+	long long result = nPr(n,r);
+	
+	if (result != -1)
+	{
+		printf("%dP%d = %lld\n",n,r,result);
+	}
+	else
+	{
+		printf("invalid input");
+	}
+	return 0;
+}
+
+
+long long factorial(int n)
+{
+	if (n < 0)
+	{
+		return  -1;
+	}
+	long long fact = 1;
+	for (int i = 1; i<=n;i++)
+	{
+		fact *=i;
+	}
+	return fact;
+}
+
+
+
+long  long nPr(int n, int r)
+{
+	if (n < 0 && r < 0 && r > n)
+	{
+		return -1;
+	}
+	return factorial(n)/factorial(n - r);
+}
