@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main()
+{
+    int a, b;
+    // Prompt user for two integer inputs
+    printf("please enter number a: ");
+	scanf("%d",&a);
+	
+	printf("please enter number b: ");
+	scanf("%d",&b);
+
+    // Perform and print the math and bitwise operations
+    printf("a + b = %d\n", a + b);
+    printf("a - b = %d\n", a - b);
+    printf("a & b = %d\n", a & b);
+    printf("a | b = %d\n", a | b);
+    printf("a ^ b = %d\n", a ^ b);
+}
