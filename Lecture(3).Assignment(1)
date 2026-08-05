@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main() 
+{	
+    int num1 = 12;
+    int num2 = 7;
+    int correctAnswer = num1 * num2;
+    int userAnswer;
+
+    printf("ALARM TRIGGERED!\n");
+
+    while (1) {
+        printf("solve to turn off alarm: %d * %d = ", num1, num2);
+        
+        if (scanf("%d", &userAnswer) != 1) {
+            printf("invalid input! please enter an integer.\n");
+            
+            while (getchar() != '\n');
+            continue;
+        }
+
+        if (userAnswer == correctAnswer) {
+            printf("\ncorrect! Alarm turned OFF.\n");
+            break;
+        } else {
+            printf("incorrect! Alarm is still buzzing...\n\n");
+        }
+    }
+
+    return 0;
+}
