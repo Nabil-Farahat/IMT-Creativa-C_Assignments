@@ -1,0 +1,53 @@
+#include <stdio.h>
+
+
+long long factorial(int n);
+
+long long nCr(int n, int r);
+
+int main()
+{
+	int n ,r;
+	printf("enter the values of n and r : ");
+	if (scanf("%d %d",&n,&r) != 2)
+	{
+		printf("invalid input");
+	}
+	long long result = nCr(n,r);
+	
+	if (result != -1)
+	{
+		printf("%dC%d = %lld\n",n,r,result);
+	}
+	else
+	{
+		printf("invalid input");
+	}
+	return 0;
+}
+
+
+long long factorial(int n)
+{
+	if (n < 0)
+	{
+		return  -1;
+	}
+	long long fact = 1;
+	for (int i = 1; i<=n;i++)
+	{
+		fact *=i;
+	}
+	return fact;
+}
+
+
+
+long  long nCr(int n, int r)
+{
+	if (n < 0 && r < 0 && r > n)
+	{
+		return -1;
+	}
+	return factorial(n)/(factorial(r) * factorial(n - r));
+}
